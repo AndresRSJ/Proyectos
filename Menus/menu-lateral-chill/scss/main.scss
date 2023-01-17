@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap);
+
+@mixin flexible($dis, $direction, $corte, $just, $aling){
+    display: $dis;
+    flex-flow: $direction $corte;
+    justify-content: $just;
+    align-items: $aling;
+}
+
+
+$fonts: (
+    "600": 600,
+    "400": 400,
+    "300": 300,
+    "200": 200,
+);
+
+$colors: (
+    "black": rgb(41, 41, 41),
+    "white": white,
+    "gray": rgb(151, 151, 151),
+    "dark-gray": rgb(109, 109, 109),
+    "light-gray": rgb(226, 226, 226),
+    "light-blue": rgb(38, 125, 255),
+);
+
+body{
+    background-color: white;
+    
+    color: map-get($colors, "black");
+    font-family: 'Poppins', sans-serif;
+
+    &.dark{
+        background-color: map-get($colors, "black")
+    }
+}
+
+.menu{
+    position: relative;
+    max-width: 15em;
+
+    background-color: map-get($colors , "light-gray");
+    color: map-get($colors, "gray");
+
+    border-radius: 0 0 5px 0;
+
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(-100%);
+
+    body.dark & {
+        background-color: map-get($colors, "dark-gray");
+
+        &.menu__profile{
+            color: white;
+           
+        }
+    }
+}
+
+.header__menu{
+    @include flexible(flex, row, nowrap, space-around, center)
+    
+}
+
+.menu__logo{
+     margin: 1em;
+
+    max-width: 3rem;    
+
+}
+.icon__menu{
+    position: absolute;
+    top: 0;
+    right: -1.5em;
+
+    width: 2em;
+    height: 2em;
+
+    overflow: hidden;
+    border-radius: 0 5px 5px 0;
+
+    background-color: map-get($colors, "light-gray");
+
+    cursor: pointer;
+}
+.icon__menu:hover .icon--book{
+    transition: all 0.1s ease-in-out;
+    filter: invert(44%) sepia(71%) saturate(4054%) hue-rotate(203deg) brightness(100%) contrast(101%);
+    transform: translateX(0.25em);
+}
+
+.show__menu{
+    transform: translateX(0%);
+}
+
+
+.menu__profile{
+    padding: 0 1em;
+
+    margin-left: -1em;
+
+    text-align: center;
+
+}
+.profile__name{
+    color: map-get($colors, "gray");
+
+    font-weight: map-get($fonts, "600");
+}
+.profile__name:hover{
+    color: map-get($colors, "white");
+    text-shadow: 2px 2px 5px rgb(0 0 0/ 0.5);
+}
+.profile__work{
+    color: map-get($colors, "light-blue");
+
+    font-weight: map-get($fonts, "200");
+}
+
+.menu__ul{
+    @include flexible(flex, column, nowrap, space-between, flex-end);
+
+    width: 90%;
+
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.menu__ul--1{
+    border-bottom: 1px solid map-get($colors, "light-gray" );
+}
+
+.menu__li{
+    width: 100%;
+    padding: 0.5em;
+    text-align: left;
+    margin-bottom: 0.5em;
+
+    border-radius: 7px;
+
+    transform: translateX(0%);
+}
+.menu__ul--span{
+    padding: 0 1em;
+    
+}
+
+.menu__li:hover{
+    background-color: map-get($colors, "light-blue" );
+    color: map-get($colors, "white" );
+}
+
+

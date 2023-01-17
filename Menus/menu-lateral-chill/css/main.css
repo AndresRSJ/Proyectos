@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap);
+body {
+  background-color: white;
+  color: rgb(41, 41, 41);
+  font-family: "Poppins", sans-serif;
+}
+body.dark {
+  background-color: rgb(41, 41, 41);
+}
+
+.menu {
+  position: relative;
+  max-width: 15em;
+  background-color: rgb(226, 226, 226);
+  color: rgb(151, 151, 151);
+  border-radius: 0 0 5px 0;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+body.dark .menu {
+  background-color: rgb(109, 109, 109);
+}
+body.dark .menu.menu__profile {
+  color: white;
+}
+
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__logo {
+  margin: 1em;
+  max-width: 3rem;
+}
+
+.icon__menu {
+  position: absolute;
+  top: 0;
+  right: -1.5em;
+  width: 2em;
+  height: 2em;
+  overflow: hidden;
+  border-radius: 0 5px 5px 0;
+  background-color: rgb(226, 226, 226);
+  cursor: pointer;
+}
+
+.icon__menu:hover .icon--book {
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  -webkit-filter: invert(44%) sepia(71%) saturate(4054%) hue-rotate(203deg) brightness(100%) contrast(101%);
+          filter: invert(44%) sepia(71%) saturate(4054%) hue-rotate(203deg) brightness(100%) contrast(101%);
+  -webkit-transform: translateX(0.25em);
+          transform: translateX(0.25em);
+}
+
+.show__menu {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.menu__profile {
+  padding: 0 1em;
+  margin-left: -1em;
+  text-align: center;
+}
+
+.profile__name {
+  color: rgb(151, 151, 151);
+  font-weight: 600;
+}
+
+.profile__name:hover {
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.profile__work {
+  color: rgb(38, 125, 255);
+  font-weight: 200;
+}
+
+.menu__ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 90%;
+  margin-bottom: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu__ul--1 {
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.menu__li {
+  width: 100%;
+  padding: 0.5em;
+  text-align: left;
+  margin-bottom: 0.5em;
+  border-radius: 7px;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.menu__ul--span {
+  padding: 0 1em;
+}
+
+.menu__li:hover {
+  background-color: rgb(38, 125, 255);
+  color: white;
+}
